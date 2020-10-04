@@ -29,7 +29,7 @@ def get_images(search_url, rating):
         array_length = len(image_array)
         num = 1
     for i in image_array:
-        year = '20' + i.split(f'{rating[0].upper()}MC')[1][:2]
+        year = '20' + i.split("/")[-2][-2:]
         print(f'getting image {str(num)}/{str(array_length)}')
         os.system(f'wget {i} -q -P MATHS-IMAGES/{rating}/{year}')
         num += 1
