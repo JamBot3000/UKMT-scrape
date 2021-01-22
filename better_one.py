@@ -33,3 +33,6 @@ for url in url_list:
 
         questions = dict(itertools.zip_longest(*[iter(images)] * 2, fillvalue=""))
         data[rating][str(year)] = {"questions": questions}
+
+with open("file.json", "w") as file:
+    json.dump(data, file)
